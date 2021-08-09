@@ -4,49 +4,45 @@ import React from "react";
 
 class Anime extends React.Component{
 
-state={
+    state={
+  
+        nombre: ""
 
-   data:[{
-        title:"",
-        caps:"",
-        poster:""       
-       }]
-
-}
+    }
 
 
-componentDidMount(){
+    componentDidMount(){
 
-    this.fetchanime();
+        this.fetchanime();
 
-    console.log(this.state);
+        
 
-}
+    }
 
-fetchanime = async () => (
-   
-        const res = await fetch("https://kitsu.io/api/edge/anime/1");
-        const dat = await res.json();
+    async fetchanime(){
     
-        this.setState(
-            {
-            title: dat.data.attributes.titles.en,
-            caps: dat.data.attributes.episodeCount,
-            poster: dat.data.attributes.posterImage.small
-            }
-        ) 
- )
+            const res = await fetch("https://kitsu.io/api/edge/anime/1")
+            const dat = await res.json()
+        
+            console.log(dat)    
+            
+            this.setState({
+                nombre: dat.data.attributes.canonicalTitle 
+            })
+
+            console.log(this.state);
+    }
 
 
-render(){
+    render(){
 
-    return(<div>
+        return(<div>
 
-            ANIME
+                ANIME
 
-         </div>)
+            </div>)
 
-}
+    }
 
 
 }
