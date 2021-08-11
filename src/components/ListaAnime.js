@@ -1,5 +1,5 @@
 import React from 'react'
-import '../components/css/Anime.css'
+import './css/Anime.css'
 
 
 const ListaAnime = ({title,img,caps}) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ListaAnime from "../pages/ListaAnime";
+import ListaAnime from "./ListaAnime";
 
 
 class Anime extends React.Component{
@@ -35,15 +35,17 @@ class Anime extends React.Component{
     render(){
 
          return(
-             <div>      
+            <div align="center" className="container-fluid center">     
                 {                 
                        this.state.form.map((dat) => {
                             return(
-                            <ListaAnime 
-                                title = {dat.attributes.canonicalTitle}
-                                img = {dat.attributes.posterImage.small}
-                                caps = {dat.attributes.episodeCount}
-                            />
+                                
+                                    <ListaAnime 
+                                        title = {dat.attributes.canonicalTitle}
+                                        img = {dat.attributes.posterImage.small}
+                                        caps = {dat.attributes.episodeCount}
+                                    />
+                               
                             )
                         }) 
                 } 

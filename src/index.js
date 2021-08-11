@@ -6,7 +6,7 @@ import Anime from './components/Anime';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Anime />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
