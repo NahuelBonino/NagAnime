@@ -1,13 +1,12 @@
 import React from "react";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ListaAnime from "../pages/ListaAnime";
 
 
 class Anime extends React.Component{
 
     state={
-  
-        nombre: ""
-
+        form:[]
     }
 
 
@@ -15,33 +14,42 @@ class Anime extends React.Component{
 
         this.fetchanime();
 
-        
-
     }
 
     async fetchanime(){
     
-            const res = await fetch("https://kitsu.io/api/edge/anime/1")
-            const dat = await res.json()
+            const res = await fetch("https://kitsu.io/api/edge/anime/")
+            const d = await res.json()
+            const form = d.data
         
-            console.log(dat)    
-            
-            this.setState({
-                nombre: dat.data.attributes.canonicalTitle 
+          //  console.log(form)    
+
+            this.setState({        
+                form                
             })
 
-            console.log(this.state);
+           //console.log(this.state.datos);
     }
 
 
     render(){
 
-        return(<div>
-
-                ANIME
-
-            </div>)
-
+         return(
+             <div>      
+                {                 
+                       this.state.form.map((dat) => {
+                            return(
+                            <ListaAnime 
+                                title = {dat.attributes.canonicalTitle}
+                                img = {dat.attributes.posterImage.small}
+                                caps = {dat.attributes.episodeCount}
+                            />
+                            )
+                        }) 
+                } 
+                
+             </div>               
+         )
     }
 
 
