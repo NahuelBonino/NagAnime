@@ -1,3 +1,9 @@
 .wdt{
-  width: 18rem;
+  width: 20rem;
+
+}
+.showAnimes{
+    display: inline-flex;
+    padding-top: 10rem;
+    padding-right: 2rem;
 }

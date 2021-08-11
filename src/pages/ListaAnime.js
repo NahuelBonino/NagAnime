@@ -1,12 +1,13 @@
 import React from 'react'
+import '../components/css/Anime.css'
 
 
 const ListaAnime = ({title,img,caps}) => {
 
     return(
-        <div className="col-4">
+        <div className="col-sm showAnimes">
         <div className="card wdt" >
-            <img className="card-img-top" src={img} alt="Card image cap"/>
+            <img className="card-img-top " src={img} alt="Card image cap"/>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>  
             </div>
