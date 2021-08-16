@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import Pagination from '../components/Pagiantion';
 import Anime from '../components/Anime'
+import URL from '../config'
 
 
 class PagListAnime extends React.Component{
@@ -9,20 +10,23 @@ class PagListAnime extends React.Component{
    state={
 
      form:[],
+     route:"",
      currentPag:1
 
    }
 
    
-   componentDidMount(){
+    componentDidMount(){
 
-    this.fetchanime();
+     this.fetchanime();
 
-}
+    }
 
-async fetchanime(){
-
-        const res = await fetch(`${URL}/?page[limit]=10&page[offset]=${this.state.currentPag * 10}`)
+    async fetchanime(){
+    
+        const route = `${URL}/?page[limit]=10&page[offset]=${(this.state.currentPag - 1) * 10}`
+        //console.log(route) 
+        const res = await fetch(route)
         const d = await res.json()
         const form = d.data
     
@@ -33,19 +37,20 @@ async fetchanime(){
         })
 
        //console.log(this.state.datos);
-}
+    }
 
     
-    handleSubmit = (state) => {
-       return(
-           this.setState(this.state)({
-           currentPag: state.currentPag + 1
-    }))}
- 
-  
+    handleSubmitNext = (e) => {
 
+        //e.preventDefault()
+        this.setState({
+            
+         currentPag: this.state.currentPag + 1
+        })
+        console.log(this.state)
+        this.forceUpdate()
+    }
  
-
 
    render(){
 
@@ -54,9 +59,15 @@ async fetchanime(){
 
             <div>
 
-                <Anime  />
+                <Anime 
+                
+                 datos = {this.state.form}    
+
+                />
                 <Pagination 
-                 onClick = {this.handleSubmit}                   
+
+                 onClick = {this.handleSubmit}  
+                                  
                  />   
 
             </div>

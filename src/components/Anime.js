@@ -6,16 +6,13 @@ import URL from "../config"
 
 class Anime extends React.Component{
 
-    state={
-        form:[]
-    }
 
     render(){
 
          return(
             <div>     
                 {                 
-                    this.state.form.map((dat) => {
+                    this.props.datos.map((dat) => {
                             return(
                                 
                                     <ListaAnime 
