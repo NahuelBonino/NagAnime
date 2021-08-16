@@ -5,7 +5,7 @@ import Img from '../img/naganime.png'
 const Header = () => {
 
    return( 
-        <div align="center" className="container-fluid"> 
+        <div> 
             <div className="row">
                 <div className="col-xl">
                     <img src={Img} />

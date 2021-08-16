@@ -1,13 +1,15 @@
 import React from "react";
-import Anime from './components/Anime'
+import PagListAnime from "./pages/PagListAnime";
 import Header from './components/Header'
+
 
 function App() {
   return (
-    <div> 
+    <div align="center" className="container-fluid"> 
       <Header />
 
-      <Anime  />
+      <PagListAnime />
+      
     </div>
   );
 }
