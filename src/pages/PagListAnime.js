@@ -10,12 +10,10 @@ class PagListAnime extends React.Component{
    state={
 
      form:[],
-     route:"",
-     currentPag:1
+     currentPag:0
 
    }
 
-   
     componentDidMount(){
 
      this.fetchanime();
@@ -24,6 +22,43 @@ class PagListAnime extends React.Component{
 
     async fetchanime(){
     
+        const route = `${URL}/?page[limit]=10&page[offset]=${(this.state.currentPag) * 10}`
+        //console.log(route) 
+        const res = await fetch(route)
+        const d = await res.json()
+        const form = d.data
+   
+        this.setState({        
+            form,            
+        })
+
+    }
+
+    //user click a pagination next
+    handleClickNext = async (e) => {
+
+        //e.preventDefault()
+        const route = `${URL}/?page[limit]=10&page[offset]=${(this.state.currentPag + 1) * 10}`
+        //console.log(route) 
+        const res = await fetch(route)
+        const d = await res.json()
+        const form = d.data
+    
+        console.log(form)    
+
+        this.setState({
+           form,
+           currentPag: this.state.currentPag + 1
+        })
+
+        //console.log(this.state)
+    }
+  
+    //user click a pagination before
+    handleClickBefore = async (e) => {
+
+        //e.preventDefault()
+
         const route = `${URL}/?page[limit]=10&page[offset]=${(this.state.currentPag - 1) * 10}`
         //console.log(route) 
         const res = await fetch(route)
@@ -32,25 +67,35 @@ class PagListAnime extends React.Component{
     
         console.log(form)    
 
-        this.setState({        
-            form                
+        this.setState({
+           form,
+           currentPag: this.state.currentPag - 1
+
         })
 
-       //console.log(this.state.datos);
+        //console.log(this.state)
     }
 
-    
-    handleSubmitNext = (e) => {
+    //user click a pagination number
+    handleClickNumber = async (number) => {
 
         //e.preventDefault()
+        const route = `${URL}/?page[limit]=10&page[offset]=${(number) * 10}` 
+        const res = await fetch(route)
+        const d = await res.json()
+        const form = d.data
+    
+        console.log(number)    
+
         this.setState({
-            
-         currentPag: this.state.currentPag + 1
+           form,
+           currentPag: number,
         })
-        console.log(this.state)
-        this.forceUpdate()
+
+        //console.log(this.state)
     }
  
+
 
    render(){
 
@@ -65,11 +110,11 @@ class PagListAnime extends React.Component{
 
                 />
                 <Pagination 
-
-                 onClick = {this.handleSubmit}  
-                                  
-                 />   
-
+                    onClickNext = {this.handleClickNext}  
+                    onClickBefore = {this.handleClickBefore}
+                    onClickNumber = {this.handleClickNumber}  
+                    currentPag = {this.state.currentPag}                         
+                />   
             </div>
         )
 
