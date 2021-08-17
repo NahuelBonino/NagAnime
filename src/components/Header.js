@@ -1,6 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Img from '../img/naganime.png'
+import './css/Anime.css'
 
 const Header = () => {
 
@@ -8,7 +9,7 @@ const Header = () => {
         <div> 
             <div className="row">
                 <div className="col-xl">
-                    <img src={Img} />
+                    <img className="img-title" src={Img} />
                 </div>
             </div>
         </div>
