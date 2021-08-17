@@ -19,7 +19,9 @@ class Anime extends React.Component{
                                         key = {dat.id}
                                         title = {dat.attributes.canonicalTitle}
                                         img = {dat.attributes.posterImage.small}
-                                        caps = {dat.attributes.episodeCount}
+                                        caps = {dat.attributes.episodeCount}  
+                                        synopsis = {dat.attributes.synopsis}  
+                                        imgMd = {dat.attributes.posterImage.medium}                                            
                                     />
                                
                             )

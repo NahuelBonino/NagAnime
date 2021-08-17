@@ -12,11 +12,11 @@ const Pagination = (props) => {
                 <ul className="pagination2 pagination">
                     <li className="page-item"><button className="page-link" onClick={onClickBefore} >Previous</button></li>
                     <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(0)}}>              First                </button></li>
-                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag)}}>    {currentPag}      </button></li>
-                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag+1)}}>  {currentPag + 1}  </button></li>
-                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag+2)}}>  {currentPag + 2}  </button></li>
-                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag+3)}}>  {currentPag + 3}  </button></li>
-                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag+4)}}>  {currentPag + 4}  </button></li>
+                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag)}}>    {currentPag + 1}      </button></li>
+                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag+1)}}>  {currentPag + 2}  </button></li>
+                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag+2)}}>  {currentPag + 3}  </button></li>
+                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag+3)}}>  {currentPag + 4}  </button></li>
+                    <li className="page-item"><button className="page-link" onClick={(e)=>{onClickNumber(currentPag+4)}}>  {currentPag + 5}  </button></li>
                     <li className="page-item"><button className="page-link" onClick={onClickNext} >Next</button></li>
                 </ul>
                 </nav>

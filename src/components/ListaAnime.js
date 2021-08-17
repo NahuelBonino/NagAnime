@@ -1,8 +1,9 @@
 import React from 'react'
 import './css/Anime.css'
+import {Link} from 'react-router-dom'
 
 
-const ListaAnime = ({title,img,caps}) => {
+const ListaAnime = ({title,img,caps,synopsis,imgMd}) => {
 
     return(
         <div className="col-sm showAnimes">
@@ -15,8 +16,16 @@ const ListaAnime = ({title,img,caps}) => {
                 <li className="list-group-item">Capitulos: {caps}</li>
             </ul>
             <div className="card-body">
-                <a href="#" className="card-link">Card link</a>
-                <a href="#" className="card-link">Another link</a>
+                <Link to={{
+                            pathname: "/animeList/animeinfo",
+                            state: { 
+                                title: {title},
+                                img: {img} ,
+                                caps: {caps},
+                                synopsis: {synopsis},
+                                imgMd: {imgMd}
+                            }
+                        }} className="card-link">Ver más</Link>
             </div>
         </div>
         </div>

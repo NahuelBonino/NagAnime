@@ -1,16 +1,18 @@
 import React from "react";
 import PagListAnime from "./pages/PagListAnime";
-import Header from './components/Header'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import DetalleAnime from "./pages/DetalleAnime";
 
 
 function App() {
   return (
-    <div align="center" className="container-fluid"> 
-      <Header />
 
-      <PagListAnime />
-      
-    </div>
+    <BrowserRouter>  
+     <Switch>     
+       <Route exact path="/animeList" component={PagListAnime}/> 
+       <Route exact path="/animeList/animeinfo" component={DetalleAnime}/> 
+     </Switch>
+    </BrowserRouter>
   );
 }
 
