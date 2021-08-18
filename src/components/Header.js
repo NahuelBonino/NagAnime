@@ -7,7 +7,7 @@ const Header = () => {
 
    return( 
         <div> 
-            <div className="row">
+            <div className="row colorHeader">
                 <div className="col-xl">
                     <img className="img-title" src={Img} />
                 </div>

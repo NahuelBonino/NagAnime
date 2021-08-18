@@ -1,12 +1,13 @@
 import React from 'react'
 import AnimeInfo from '../components/AnimeInfo';
 import Header from '../components/Header';
+import '../components/css/Anime.css'
 
 class DetalleAnime extends React.Component{
 
     render(){
 
-        const {title,img,caps,synopsis,imgMd} = this.props.location.state
+        const {title,img,caps,synopsis,imgMd,idvideo,startDate,endDate} = this.props.location.state
 
         return(
                
@@ -21,7 +22,9 @@ class DetalleAnime extends React.Component{
                     caps = {caps}
                     synopsis = {synopsis}
                     imgMd = {imgMd}
-  
+                    idvideo = {idvideo}
+                    startDate= {startDate}
+                    endDate = {endDate}
                 />
       
             </div>

@@ -21,7 +21,10 @@ class Anime extends React.Component{
                                         img = {dat.attributes.posterImage.small}
                                         caps = {dat.attributes.episodeCount}  
                                         synopsis = {dat.attributes.synopsis}  
-                                        imgMd = {dat.attributes.posterImage.medium}                                            
+                                        imgMd = {dat.attributes.posterImage.medium}  
+                                        idvideo = {dat.attributes.youtubeVideoId}   
+                                        startDate = {dat.attributes.startDate}      
+                                        endDate = {dat.attributes.endDate}                                  
                                     />
                                
                             )

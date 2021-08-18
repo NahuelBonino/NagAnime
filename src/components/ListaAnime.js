@@ -3,8 +3,8 @@ import './css/Anime.css'
 import {Link} from 'react-router-dom'
 
 
-const ListaAnime = ({title,img,caps,synopsis,imgMd}) => {
-
+const ListaAnime = ({title,img,caps,synopsis,imgMd,idvideo,startDate,endDate}) => {
+    //console.log(startDate)
     return(
         <div className="col-sm showAnimes">
         <div className="card wdt-card" >
@@ -23,7 +23,10 @@ const ListaAnime = ({title,img,caps,synopsis,imgMd}) => {
                                 img: {img} ,
                                 caps: {caps},
                                 synopsis: {synopsis},
-                                imgMd: {imgMd}
+                                imgMd: {imgMd},
+                                idvideo: {idvideo},
+                                startDate: {startDate},
+                                endDate: {endDate}
                             }
                         }} className="card-link">Ver más</Link>
             </div>

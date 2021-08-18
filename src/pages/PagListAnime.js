@@ -31,6 +31,7 @@ class PagListAnime extends React.Component{
         this.setState({        
             form,            
         })
+        console.log(form)
 
     }
 
