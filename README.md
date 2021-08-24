@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+Actualmente este proyecto esta hosteado en Firebase. Podes verlo en https://naganime-914b4.web.app/AnimeList
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
