@@ -2,12 +2,12 @@ import React from 'react'
 import AnimeInfo from '../components/AnimeInfo';
 import Header from '../components/Header';
 import '../components/css/Anime.css'
+//import 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js'
 
-class DetalleAnime extends React.Component{
 
-    render(){
+const DetalleAnime = (props) => {
 
-        const {title,img,caps,synopsis,imgMd,idvideo,startDate,endDate} = this.props.location.state
+        const {title,img,caps,synopsis,imgMd,idvideo,startDate,endDate} = props.location.state
 
         return(
                
@@ -29,9 +29,9 @@ class DetalleAnime extends React.Component{
       
             </div>
         )
-            
-    }
+    
 
 }
+
 
 export default DetalleAnime;

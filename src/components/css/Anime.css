@@ -11,17 +11,22 @@
 }
 
 .img-title{
-  width: 40%;
-  padding-top: 5rem;
+  width: 350px;
+  float: left;
 }
 
 .colorHeader{
 
-  background: linear-gradient(90deg, rgba(222,203,164,1) 0%, rgba(115,122,109,1) 100%);
-  height: 300px;
+  background: #121640;
+  height: 350px;
 
 }
 
 .video-youtube{
   padding-top: 10rem;
+}
+
+.card-body{
+    display: block;
+    height: 100px;
 }

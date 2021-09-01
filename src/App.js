@@ -6,11 +6,10 @@ import DetalleAnime from "./pages/DetalleAnime";
 
 function App() {
   return (
-
     <BrowserRouter>  
      <Switch>     
-       <Route exact path="/animeList" component={PagListAnime}/> 
-       <Route exact path="/animeList/animeinfo" component={DetalleAnime}/> 
+       <Route exact path="/" component={PagListAnime}/> 
+       <Route exact path="/animeinfo" component={DetalleAnime}/> 
      </Switch>
     </BrowserRouter>
   );
